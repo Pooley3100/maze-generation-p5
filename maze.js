@@ -174,11 +174,10 @@ function recRoute(i, j){
     return result;
 }
 
-// function mousePressed(){
-//     recRoute();
-// }
+function mousePressed(){
+    recRoute(0, 0);
+}
 
-recRoute();
 function draw(){
     background(0);
     fill('rgba(0,255,0, 0.15)');
