@@ -1,3 +1,3 @@
-# pooley3100.github.io
+# maze-generation-p5
 
 Simple maze generation and serach with depth first.
