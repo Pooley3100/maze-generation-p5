@@ -1,8 +1,7 @@
 // Showing Maze A* Algortihm with p5.js:
-var widthScreen = 700, heightScreen = 600;
 
 function setup(){
-    createCanvas(widthScreen, heightScreen);
+    createCanvas(windowWidth, windowHeight);
 };
 
 //Create maseSize x maseSize maze of cells
@@ -104,11 +103,13 @@ function createMaze(){
 
 
 createMaze();
-var cellSize = 500/mazeSize;
 
 function drawMaze(){
+    var cellStart = (windowWidth < windowHeight ? windowWidth : windowHeight);
+    var cellSize = (cellStart-100)/mazeSize;
     // Draw Maze
-    translate(100, 50);
+    translate(windowWidth/2, windowHeight/2);
+    translate(-((mazeSize*cellSize)/2),-((mazeSize*cellSize)/2));
     for(var i = 0; i < maze.length; i++){
         for(var j = 0; j < maze[i].length; j++){
             if(maze[i][j].top === 1){
@@ -184,4 +185,8 @@ function draw(){
     stroke(255,255,255);
     
     drawMaze();
+};
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 };
